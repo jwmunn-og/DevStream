@@ -12,6 +12,8 @@ $spacing-unit: 2rem;
   background-size: cover;
 }
 
+// Global Styles
+
 // Nav
 .top-bar, .top-bar ul {
   background: $secondary-color;
@@ -38,4 +40,9 @@ $spacing-unit: 2rem;
 
 .frosty {
   background: rgba(0, 0, 0, 0.5);
+}
+
+// Features
+.feature {
+  margin-top: $spacing-unit;
 }
