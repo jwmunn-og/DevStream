@@ -15,19 +15,17 @@
     <nav>
       <div class="top-bar">
         <div class="row">
-          <div class="col-12">
-            <div class="top-bar-left">
+            <div class="expand columns">
               <ul class="dropdown menu" data-dropdown-menu>
                 <li><%= link_to 'Flixter', root_path, class: 'menu-text' %></li>
               </ul>
             </div>
-            <div class="top-bar-right">
+            <div class="shrink columns">
               <ul class="menu">
                 <li><%= link_to 'Sign Up', new_user_registration_path, class: 'button' %></li>
                 <li><%= link_to 'Log In', new_user_session_path, class: 'hollow button' %></li>
               </ul>
             </div>
-          </div>
         </div>
       </div>
     </nav>
@@ -38,8 +36,15 @@
     <% if alert.present? %>
       <p class="callout alert"><%= alert %></p>
     <% end %>
-
-    <%= yield %>
-
+    <section class="content">
+      <%= yield %>
+    </section>
+    <footer class="footer">
+      <div class="row">
+        <div class="small-12 columns">
+          FOOTER
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
