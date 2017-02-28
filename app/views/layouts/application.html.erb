@@ -44,6 +44,12 @@
         </div>
       </div>
     </nav>
+    <% if notice.present? %>
+      <p class="callout primary"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+      <p class="callout alert"><%= alert %></p>
+    <% end %>
 
     <%= yield %>
 
