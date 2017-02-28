@@ -13,6 +13,9 @@ $spacing-unit: 2rem;
 }
 
 // Global Styles
+body {
+  background: #f5f5f5;
+}
 
 // Nav
 .top-bar, .top-bar ul {
@@ -45,4 +48,16 @@ $spacing-unit: 2rem;
 // Features
 .feature {
   margin-top: $spacing-unit;
+}
+
+.card {
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  background: #fff;
+  border: 1px solid #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  padding: 1.5em;
 }
