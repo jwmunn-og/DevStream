@@ -80,3 +80,18 @@ body {
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
 }
+
+small.error {
+  background-color: #FFEEEE;
+  border-radius: 3px;
+  padding: 2px 8px 2px 8px;
+}
+
+[type='submit'], [type='button'] {
+  margin-top: $spacing-unit / 2;
+}
+
+abbr[title="required"], small.error {
+  color: #ff3333;
+  text-decoration: none;
+}
