@@ -1,13 +1,13 @@
 <div class="row">
   <div class="card small-12 large-10 large-offset-1 columns">
     <div class="row align-bottom">
-      <h1 class="columns"><%= @course.title %></h1>
-      <%= link_to 'Preview as Student', course_path(@course), class: 'button alert float-right shrink columns' %>
+      <h1 class="columns"><%= current_course.title %></h1>
+      <%= link_to 'Preview as Student', course_path(current_course), class: 'button alert float-right shrink columns' %>
     </div>
     <br />
-    <%= link_to 'Add a new section', new_instructor_course_section_path(@course), class: 'button' %>
+    <%= link_to 'Add a new section', new_instructor_course_section_path(current_course), class: 'button' %>
     
-      <% @course.sections.each do |section| %>
+      <% current_course.sections.each do |section| %>
       
           <h3><%= section.title %></h3>
           <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'button float-right' %>
