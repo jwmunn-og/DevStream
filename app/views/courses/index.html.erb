@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="card small-12 large-10 large-offset-1 columns">
+    <h1>Learn about something today.</h1>
+      <% @courses.each do |course| %>
+        <div class="row">
+          <h2 class="small-12 columns"><%= course.title %></h2>
+          <div class="small-12 large-8 columns">
+            <%= course.description %>
+          </div>
+          <div class="small-12 large-4 columns">
+            <%= link_to 'Button', '#', class: 'button large' %>
+          </div>
+        </div>
+        <hr />
+      <% end %>
+  </div>
+</div>
