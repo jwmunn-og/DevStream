@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="card small-12 large-10 large-offset-1 columns">
+    <h1>Add a new section</h1>
+    <%= simple_form_for @section, url: instructor_course_sections_path(@course) do |f| %>
+      <%= f.input :title %>
+      <br />
+      <%= f.submit 'Add a section', class: 'button' %>
+    <% end %>
+  </div>
+</div>
