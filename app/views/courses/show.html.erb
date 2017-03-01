@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="card small-12 large-10 large-offset-1 columns">
+    <div class="row">
+      <h2 class="small-12 columns"><%= @course.title %></h2>
+      <div class="small-12 large-4 columns text-center">
+        <br />
+        <span class="callout success">
+          <%= number_to_currency @course.cost %>
+        </span>
+        <br class="clear" />
+        <br />
+        <% if current_user && current_user == @course.user %>
+          <%= link_to 'Administer', instructor_course_path(@course), class: 'button alert' %>
+        <% end %>
+      </div>
+      <div class="small-12 large-8 columns">
+        <br />
+        <%= @course.description %>
+      </div>
+    </div>
+  </div>
+</div>
