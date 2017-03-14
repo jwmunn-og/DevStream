@@ -8,9 +8,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   def enrolled_in?(course)
-    enrolled_courses = []
-    erollments.each do |enrollment|
-      enrolled_courses << enrollment.course
+    enrolled_courses = erollments.collect do |enrollment|
+      enrollment.course
     end
 
     return enrolled_courses.include?(course)
