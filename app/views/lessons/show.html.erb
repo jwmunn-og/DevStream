@@ -2,5 +2,16 @@
   <div class="card small-12 large-10 large-offset-1 columns">
     <h1><%= current_lesson.title %></h1>
     <p><%= current_lesson.subtitle %></p>
+    <div class="row">
+      <div class="small-12 large-6 columns">
+        <div class="responsive-embed">
+          <video src="<%= current_lesson.video.to_s %>" controls>
+            Sorry, your browser doesn't support embedded videos, 
+            but don't worry, you can <%= link_to 'Download It', current_lesson.video.to_s %>
+            and watch it with your favorite video player!
+          </video>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
