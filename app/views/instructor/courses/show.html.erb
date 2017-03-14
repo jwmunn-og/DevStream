@@ -2,9 +2,11 @@
   <div class="card small-12 large-10 large-offset-1 columns">
     <div class="row align-bottom">
       <h1 class="columns"><%= current_course.title %></h1>
-      <%= image_tag current_course.image %>
       <%= link_to 'Preview as Student', course_path(current_course), class: 'button alert float-right shrink columns' %>
     </div>
+     <div class="row">
+       <%= image_tag current_course.image, class: 'columns' %>
+     </div>
     <br />
     <%= link_to 'Add a new section', new_instructor_course_section_path(current_course), class: 'button' %>
     
