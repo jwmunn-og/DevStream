@@ -18,18 +18,24 @@
         <br />
         <%= @course.description %>
       </div>
-      <div class="small-12 large-8 columns">
+      <div class="small-12 large-12 columns">
         <hr />
         <% @course.sections.each do |section| %>
+          <br /><br />
           <div class="section">
               <h3><%= section.title %></h3>
-              <% section.lessons.each do |lesson| %>
-                <div class="lesson">
-                  <%= link_to lesson_path(lesson) do %>
-                    <strong><%= lesson.title %></strong> - <%= lesson.subtitle %>
-                  <% end %>
-                </div>
-              <% end %>
+              <div class="row">
+                <% section.lessons.each do |lesson| %>
+                    <div class="lesson text-center small-12 medium-6 columns">
+                      <br />
+                      <%= link_to lesson_path(lesson) do %>
+                        <h4><%= lesson.title %></h4>
+                        <br />
+                        <p><%= lesson.subtitle %></p>
+                      <% end %>
+                    </div>
+                <% end %>
+              </div>
               <hr />
           </div>
         <% end %>

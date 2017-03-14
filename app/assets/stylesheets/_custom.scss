@@ -4,6 +4,10 @@ $primary-color: #1fc8a9;
 $secondary-color: #ffefe5;
 $spacing-unit: 2rem;
 
+* {
+  box-sizing: border-box;
+}
+
 // Mixins
 @mixin bg-cover {
   -webkit-background-size: cover;
@@ -98,4 +102,21 @@ abbr[title="required"], small.error {
 
 .clear {
   clear: both;
+}
+
+.lesson {
+  background-color: #000;
+  margin-top: 5px;
+  height: 130px;
+  border: 5px solid #fff;
+  & a {
+    color: #fff;
+    font-size: 1em;
+  }
+}
+
+.section {
+  border: 1px solid;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  padding: 20px;
 }
