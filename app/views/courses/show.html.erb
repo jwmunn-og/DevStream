@@ -14,10 +14,25 @@
           <%= link_to 'Administer', instructor_course_path(@course), class: 'button alert' %>
         <% end %>
         <br /><br />
-        <% if current_user && current_user.enrolled_in?(@course) %>
-          <h3>You Are Enrolled!</h3>
-        <% else %>
-          <%= link_to 'Enroll', course_enrollments_path(@course), class: 'button', method: :post %>
+        <% if current_user %>
+          <% if current_user.enrolled_in?(@course) %>
+            <h3>You Are Enrolled!</h3>
+          <% else %>
+            <% if @course.free? %>
+              <%= link_to 'Enroll', course_enrollments_path(@course), class: 'button', method: :post %>
+            <% else %>
+                <%= form_tag course_enrollments_path(@course) do %>
+                  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                          data-email="<%= current_user.email %>"
+                          data-description="<%= @course.title %> (<%= number_to_currency @course.cost %>)"
+                          data-amount="<%= (@course.cost * 100).to_i %>"
+                          data-locale="auto"></script>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% else %>
+            <h4 class="callout warning">Sign In to Enroll!</h4>
         <% end %>
       </div>
       <div class="small-12 large-8 columns">
