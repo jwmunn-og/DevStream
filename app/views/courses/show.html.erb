@@ -13,6 +13,8 @@
         <% if current_user && current_user == @course.user %>
           <%= link_to 'Administer', instructor_course_path(@course), class: 'button alert' %>
         <% end %>
+        <br /><br />
+        <%= link_to 'Enroll', course_enrollments_path(@course), class: 'button', method: :post %>
       </div>
       <div class="small-12 large-8 columns">
         <br />
