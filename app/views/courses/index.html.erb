@@ -4,6 +4,7 @@
       <% @courses.each do |course| %>
         <div class="row">
           <h2 class="small-12 columns"><%= link_to course.title, course_path(course) %></h2>
+           <%= image_tag course.image, class: 'small-12 columns' %>
           <div class="small-12 large-8 columns">
             <%= course.description %>
           </div>
