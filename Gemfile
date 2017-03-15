@@ -59,6 +59,9 @@ gem 'fog'
 # Use Stripe for Credit Card Processing
 gem 'stripe'
 
+# Use Ranked model for Lesson Order
+gem 'ranked-model'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
