@@ -1,29 +1,37 @@
 <div class="row">
   <div class="card small-12 large-10 large-offset-1 columns">
     <div class="row align-bottom">
-      <h1 class="columns"><%= current_course.title %></h1>
-      <%= link_to 'Preview as Student', course_path(current_course), class: 'button alert float-right shrink columns' %>
+      <div class="columns">
+        <h1><%= current_course.title %> <%= link_to 'Preview as Student', course_path(current_course), class: 'button alert float-right shrink columns' %></h1>
+      </div>
     </div>
      <div class="row">
        <%= image_tag current_course.image, class: 'columns' %>
      </div>
     <br />
-    <%= link_to 'Add a new section', new_instructor_course_section_path(current_course), class: 'button' %>
-      <div class="sections">
-        <% current_course.sections.rank(:row_order).each do |section| %>
-          <div class="section" data-update-url=<%= instructor_section_path(section) %>>
-            <h3><%= fa_icon "sort" %> <%= section.title %> <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'button float-right' %></h3>
-            
-            <br />
-            <ul class="lessons">
-              <% section.lessons.rank(:row_order).each do |lesson| %>
-                <li data-update-url=<%= instructor_lesson_path(lesson) %>>
-                  <%= fa_icon "sort" %> <strong><%= lesson.title %></strong> - <%= lesson.subtitle %>
-                </li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
+     <div class="row">
+       <div class="columns">
+        <%= link_to 'Add a new section', new_instructor_course_section_path(current_course), class: 'button' %>
+       </div>
+     </div>
+     <div class="row">
+       <div class="columns">
+        <div class="sections">
+          <% current_course.sections.rank(:row_order).each do |section| %>
+            <div class="section" data-update-url=<%= instructor_section_path(section) %>>
+              <h3><%= fa_icon "sort" %> <%= section.title %> <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'button float-right' %></h3>
+              
+              <br />
+              <ul class="lessons">
+                <% section.lessons.rank(:row_order).each do |lesson| %>
+                  <li data-update-url=<%= instructor_lesson_path(lesson) %>>
+                    <%= fa_icon "sort" %> <strong><%= lesson.title %></strong> - <%= lesson.subtitle %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+        </div>
       </div>
   </div>
 </div>
