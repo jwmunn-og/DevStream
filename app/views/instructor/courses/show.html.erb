@@ -21,7 +21,6 @@
             <div class="section" data-update-url=<%= instructor_section_path(section) %>
               <p><a data-open="newLessonModal" class="button new-lesson-button float-right" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">New Lesson</a></p>
                <h3><%= fa_icon "sort" %> <%= section.title %></h3>
-              <!--<h3><%= fa_icon "sort" %> <%= section.title %> <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'button float-right' %></h3>-->
               
               <br />
               <ul class="lessons">
