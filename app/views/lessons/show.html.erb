@@ -1,7 +1,15 @@
 <div class="row">
   <div class="card small-12 large-10 large-offset-1 columns">
     <h1><%= current_lesson.title %></h1>
-    <p><%= current_lesson.subtitle %></p>
+    <p class="float-left"><%= current_lesson.subtitle %></p>
+    <% if current_lesson.next_lesson.present? %>
+      <%= link_to lesson_path(current_lesson.next_lesson), class: 'button float-right' do %>
+      Next Lesson
+      <%= fa_icon "arrow-right" %>
+      <% end %>
+    <% end %>
+    <br />
+    <br />
     <div class="row">
       <div class="small-12 large-6 columns">
          <div class="responsive-embed">
