@@ -147,3 +147,10 @@ ul {
   border: 2px dashed darken($light-grey, 20%);
   visibility: visible !important;
 }
+
+.social-button {
+  margin: 4px;
+  &:first-child {
+    margin-left: 0px;
+  }
+}

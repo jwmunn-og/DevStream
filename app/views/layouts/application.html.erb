@@ -49,9 +49,49 @@
     </section>
     <footer class="footer">
       <div class="row">
-        <div class="small-12 columns">
+        <div class="small-12 medium-6 large-3 columns">
           <strong>Teachers</strong>
-          <%= link_to 'Teach a Course', new_instructor_course_path %>
+          <div>
+            <%= link_to 'Teach a Course', new_instructor_course_path %>
+          </div>
+          <div>
+            <%= link_to 'My Dashboard', dashboard_path %>
+          </div>
+        </div>
+        <div class="small-12 medium-6 large-3 columns">
+          <strong>About</strong>
+          <div>
+            <%= link_to 'Team', '#' %>
+          </div>
+          <div>
+            <%= link_to 'Careers', '#' %>
+          </div>
+          <div>
+            <%= link_to 'Privacy Policy', '#' %>
+          </div>
+        </div>
+        <div class="small-12 medium-6 large-3 columns">
+          <strong>Contact</strong>
+          <div>
+            contact@justinmunn.co
+          </div>
+          <div>
+            Seattle, WA
+          </div>
+        </div>
+        <div class="small-12 medium-6 large-3 columns">
+          <strong>Social</strong>
+          <div id="social-footer">
+            <%= link_to "https://github.com/jwmunn" do %>
+              <%= fa_icon "github-square", class: "fa-2x social-button" %>
+            <% end %>
+            <%= link_to "https://twitter.com/jwmunn" do %>
+              <%= fa_icon "twitter-square", class: "fa-2x social-button" %>
+            <% end %>
+            <%= link_to "https://www.linkedin.com/in/jwmunn/" do %>
+              <%= fa_icon "linkedin-square", class: "fa-2x social-button" %>
+            <% end %>
+          </div>
         </div>
       </div>
     </footer>
