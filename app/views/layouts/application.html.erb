@@ -20,14 +20,14 @@
         <div class="row">
             <div class="expand columns">
               <ul class="menu">
-                <li><%= link_to root_path, class: 'menu-text' do %>
+                <li><%= link_to root_path, class: 'menu-text', id: 'logo' do %>
                       &lt;DevStream&gt;
                     <% end %>
                 </li>
-                <li><%= link_to 'See All Courses', courses_path %></li>
+                <li class="show-for-medium"><%= link_to 'See All Courses', courses_path %></li>
               </ul>
             </div>
-            <div class="shrink columns">
+            <div class="shrink columns right-nav">
               <ul class="menu">
                 <% if user_signed_in? %>
                   <li><%= link_to 'My Dashboard', dashboard_path %></li>

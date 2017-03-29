@@ -34,6 +34,16 @@ h1, h2 {
   font-weight: 400;
 }
 
+h1 {
+  font-size: 2.5rem;
+}
+
+ @media print, screen and (min-width: 40em) {
+    h1 {
+      font-size: 3.5rem;
+    }
+  }
+
 h3, h4, h5, h6, p, .button {
   font-family: "freight-sans-pro", 'Helvetica Neue', Helvetica, sans-serif;
 }
@@ -45,6 +55,7 @@ a {
     color: darken($primary-color, 10%);
   }
 }
+
 .content {
   flex: 1 0;
 }
@@ -65,6 +76,14 @@ a {
 .menu-text {
   color: $primary-color;
   padding-left: 0;
+}
+
+#logo {
+  padding-left: 0;
+}
+
+.right-nav {
+  padding-right: 0;
 }
 
 // Hero
@@ -213,8 +232,8 @@ ul {
     position: absolute;
     top: 0;
     right: 0;
-    margin-right: 0.9375rem;
-    margin-left: 0.9375rem;
+    margin-right: 0.625rem;
+    margin-left: 0.625rem;
     color:#fff;
     background: #00dbde;
     font-weight: bold;
@@ -223,8 +242,15 @@ ul {
   }
 }
 
+@media print, screen and (min-width: 40em) {
+  #course-image .cost {
+    margin-right: 0.9375rem;
+    margin-left: 0.9375rem;
+  }
+}
+
 .video-card {
-  margin-top: -($spacing-unit * 2)
+  border-radius: 10px;
 }
 
 .new-section-button {
@@ -271,4 +297,16 @@ ul {
 
 p.callout {
   margin: 0;
+}
+
+[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
+  border-radius: 10px;
+}
+
+.right-form-link {
+  margin: 1.5rem 0;
+}
+
+.responsive-embed {
+  overflow: visible;
 }
