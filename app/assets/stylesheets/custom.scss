@@ -94,10 +94,16 @@ a {
   margin-bottom: 1.5em;
   // padding: 1.5em;
   border: none;
+  border-radius: 10px;
 }
 
 .card-content {
   padding: 1.5em;
+}
+
+h5.callout {
+  border-radius: 10px;
+  display: inline-block;
 }
 
 .footer {
@@ -188,7 +194,8 @@ ul {
   background: -webkit-linear-gradient(to left, #fc00ff , #00dbde); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #fc00ff , #00dbde); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   & .row {
-    height: 50vh;
+    padding-top: $spacing-unit;
+    padding-bottom: $spacing-unit;
   }
   & h1, & p {
     color: #fff;
@@ -197,6 +204,7 @@ ul {
 
 .feature-image {
    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+   border-radius: 10px;
 }
 
 #course-image {
@@ -211,6 +219,7 @@ ul {
     background: #00dbde;
     font-weight: bold;
     padding: .75em;
+    border-radius: 0 10px 0 0;
   }
 }
 
@@ -258,4 +267,8 @@ ul {
   background-size: 130%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+p.callout {
+  margin: 0;
 }
