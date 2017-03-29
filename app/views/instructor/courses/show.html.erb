@@ -1,35 +1,49 @@
-<div class="row">
-  <div class="card small-12 large-10 large-offset-1 columns">
-    <div class="row align-bottom">
-      <div class="columns">
-        <h1><%= current_course.title %> <%= link_to 'Preview as Student', course_path(current_course), class: 'button alert float-right shrink columns' %></h1>
+<div id="course-title">
+  <div class="row align-middle">
+    <div class="small-12 large-10 large-offset-1 columns">
+      <div class="row align-middle">
+        <div class="small-12 medium-7 columns">
+          <h1><%= current_course.title %></h1>
+          <p class="lead"><%= current_course.description %></p>
+          <p>
+            <%= link_to 'Preview as Student', course_path(current_course), class: 'button button-white-secondary shrink columns' %>
+          </p>
+        </div>
+        <div id="course-image" class="small-12 medium-5 columns">
+          <%= image_tag current_course.image, class: 'feature-image' %>
+        </div>
       </div>
     </div>
-     <div class="row">
-       <%= image_tag current_course.image, class: 'columns' %>
-     </div>
+  </div>
+</div>
+
+<div class="row align-bottom">
+  <div class="small-12 large-10 large-offset-1 columns">
     <br />
-     <div class="row">
-       <div class="columns">
-        <p><a data-open="newSectionModal" class="button">Add a New Section</a></p>
-       </div>
-     </div>
+      <h2>Sections <a data-open="newSectionModal" class="button new-section-button">Add a New Section</a></h2>
+      <hr />
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 large-10 large-offset-1 columns">
      <div class="row">
        <div class="columns">
         <div class="sections">
           <% current_course.sections.rank(:row_order).each do |section| %>
-            <div class="section" data-update-url=<%= instructor_section_path(section) %>
-              <p><a data-open="newLessonModal" class="button new-lesson-button float-right" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">New Lesson</a></p>
+            <div class="section card card-content" data-update-url=<%= instructor_section_path(section) %>>
                <h3><%= fa_icon "sort" %> <%= section.title %></h3>
               
               <br />
               <ul class="lessons">
                 <% section.lessons.rank(:row_order).each do |lesson| %>
                   <li data-update-url=<%= instructor_lesson_path(lesson) %>>
-                    <%= fa_icon "sort" %> <strong><%= lesson.title %></strong> - <%= lesson.subtitle %>
+                    <%= fa_icon "sort" %>&nbsp;&nbsp;<strong><%= lesson.title %>:</strong> <%= lesson.subtitle %>
                   </li>
                 <% end %>
+                <li><a data-open="newLessonModal" class="button new-lesson-button" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">Add a New Lesson</a></li>
               </ul>
+              
             </div>
           <% end %>
         </div>

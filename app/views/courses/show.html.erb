@@ -2,12 +2,12 @@
   <div class="row align-middle">
     <div class="small-12 large-10 large-offset-1 columns">
       <div class="row align-middle">
-        <div class="small-12 medium-8 columns">
+        <div class="small-12 medium-7 columns">
           <h1><%= @course.title %></h1>
           <p class="lead"><%= @course.description %></p>
           <p>
             <% if current_user && current_user == @course.user %>
-              <%= link_to 'Administer', instructor_course_path(@course), class: 'button alert' %>
+              <%= link_to 'Administer', instructor_course_path(@course), class: 'button button-white-secondary' %>
             <% end %>
              <% if current_user %>
               <% if current_user.enrolled_in?(@course) %>
@@ -31,7 +31,7 @@
             <% end %>
           </p>
         </div>
-        <div id="course-image" class="small-12 medium-4 columns">
+        <div id="course-image" class="small-12 medium-5 columns">
           <%= image_tag @course.image, class: 'feature-image' %>
           <div class="cost">
             <%= number_to_currency @course.cost %>

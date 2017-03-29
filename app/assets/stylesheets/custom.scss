@@ -133,7 +133,8 @@ abbr[title="required"], small.error {
   padding: 10px;
   margin-bottom: 5px;
   &::last-child {
-    margin-bottom: 0;
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -196,4 +197,37 @@ ul {
 
 .video-card {
   margin-top: -($spacing-unit * 2)
+}
+
+.new-section-button {
+  margin-bottom: .5rem;
+}
+
+.new-lesson-button{
+  margin: 0;
+}
+
+.button {
+  background-color: #fff;
+    color: #00dbde;
+    border-radius: 50px;
+    border: 2px solid #00dbde;
+    transition: all .2s ease;
+    &:hover, &:focus, &:active {
+      background-color: #00dbde;
+      color: #fff;
+    }
+}
+
+.button-white-secondary {
+    background-color: #fff;
+    border: 2px solid #fff;
+    color: #fc00ff;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border-radius: 50px;
+    &:hover {
+      border: 2px solid #fc00ff;
+      background-color: #fc00ff;
+      color: #fff;
+    }
 }
