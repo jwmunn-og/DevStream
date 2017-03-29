@@ -33,7 +33,7 @@ body {
 
 // Nav
 .top-bar, .top-bar ul {
-  background: $secondary-color;
+  background: #fff;
 }
 
 .top-bar {
@@ -85,8 +85,10 @@ body {
   position: relative;
   width: 100%;
   min-height: 100px;
-  background: rgba(0, 0, 0, 0.5);
+  background: #222;
   color: #fff;
+  padding-top: $spacing-unit / 2;
+  padding-bottom: $spacing-unit / 2;
 }
 
 small.error {
@@ -119,13 +121,13 @@ abbr[title="required"], small.error {
   }
 }
 
-.section, .lessons li {
-  background: #fff;
-  padding: 20px;
-  margin-bottom: 10px;
-  box-shadow: $shadow;
-  transition: $shadow-transition;
-}
+// .section, .lessons li {
+//   // background: #fff;
+//   padding: 20px;
+//   margin-bottom: 10px;
+//   // box-shadow: $shadow;
+//   // transition: $shadow-transition;
+// }
 
 .lessons li {
   padding: 10px;
@@ -156,5 +158,38 @@ ul {
   margin: 4px;
   &:first-child {
     margin-left: 0px;
+  }
+}
+
+// Course Detail Page Layout
+
+#course-title {
+  background: #fc00ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #fc00ff , #00dbde); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #fc00ff , #00dbde); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  & .row {
+    height: 50vh;
+  }
+  & h1, & p {
+    color: #fff;
+  }       
+}
+
+.feature-image {
+   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+#course-image {
+  position: relative;
+  & .cost {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 0.9375rem;
+    margin-left: 0.9375rem;
+    color:#fff;
+    background: #00dbde;
+    font-weight: bold;
+    padding: .75em;
   }
 }

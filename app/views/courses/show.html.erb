@@ -1,68 +1,66 @@
-<div class="row">
-  <div class="card small-12 large-10 large-offset-1 columns">
-    <div class="row">
-      <div class="small-12 columns">
-      <h2><%= @course.title %></h2>
-      <%= image_tag @course.image %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="small-12 large-4 columns text-center">
-        <br />
-        <span class="callout success">
-          <%= number_to_currency @course.cost %>
-        </span>
-        <br class="clear" />
-        <br />
-        <% if current_user && current_user == @course.user %>
-          <%= link_to 'Administer', instructor_course_path(@course), class: 'button alert' %>
-        <% end %>
-        <br /><br />
-        <% if current_user %>
-          <% if current_user.enrolled_in?(@course) %>
-            <h3>You Are Enrolled!</h3>
-          <% else %>
-            <% if @course.free? %>
-              <%= link_to 'Enroll', course_enrollments_path(@course), class: 'button', method: :post %>
-            <% else %>
-                <%= form_tag course_enrollments_path(@course) do %>
-                  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                          data-email="<%= current_user.email %>"
-                          data-description="<%= @course.title %> (<%= number_to_currency @course.cost %>)"
-                          data-amount="<%= (@course.cost * 100).to_i %>"
-                          data-locale="auto"></script>
-                <% end %>
-              <% end %>
+<div id="course-title">
+  <div class="row align-middle">
+    <div class="small-12 large-10 large-offset-1 columns">
+      <div class="row align-middle">
+        <div class="small-12 medium-8 columns">
+          <h1><%= @course.title %></h1>
+          <p class="lead"><%= @course.description %></p>
+          <p>
+            <% if current_user && current_user == @course.user %>
+              <%= link_to 'Administer', instructor_course_path(@course), class: 'button alert' %>
             <% end %>
-          <% else %>
-            <h4 class="callout warning">Sign In to Enroll!</h4>
-        <% end %>
-      </div>
-      <div class="small-12 large-8 columns">
-        <br />
-        <%= @course.description %>
-      </div>
-      <div class="small-12 large-12 columns">
-        <% @course.sections.rank(:row_order).each do |section| %>
-          <br /><br />
-          <div class="section">
-              <h3><%= section.title %></h3>
-              <div class="row">
-                <% section.lessons.rank(:row_order).each do |lesson| %>
-                    <div class="lesson text-center small-12 medium-6 columns">
-                      <br />
-                      <%= link_to lesson_path(lesson) do %>
-                        <h4><%= lesson.title %></h4>
-                        <br />
-                        <p><%= lesson.subtitle %></p>
-                      <% end %>
-                    </div>
+             <% if current_user %>
+              <% if current_user.enrolled_in?(@course) %>
+                <h3>You Are Enrolled!</h3>
+              <% else %>
+                <% if @course.free? %>
+                  <%= link_to 'Enroll', course_enrollments_path(@course), class: 'button', method: :post %>
+                <% else %>
+                    <%= form_tag course_enrollments_path(@course) do %>
+                      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                              data-email="<%= current_user.email %>"
+                              data-description="<%= @course.title %> (<%= number_to_currency @course.cost %>)"
+                              data-amount="<%= (@course.cost * 100).to_i %>"
+                              data-locale="auto"></script>
+                    <% end %>
+                  <% end %>
                 <% end %>
-              </div>
+              <% else %>
+                <h4 class="callout warning">Sign In to Enroll!</h4>
+            <% end %>
+          </p>
+        </div>
+        <div id="course-image" class="small-12 medium-4 columns">
+          <%= image_tag @course.image, class: 'feature-image' %>
+          <div class="cost">
+            <%= number_to_currency @course.cost %>
           </div>
-        <% end %>
+        </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 large-10 large-offset-1 columns">
+    <% @course.sections.rank(:row_order).each do |section| %>
+      <br />
+      <div class="section">
+          <h3><%= section.title %></h3>
+          <div class="row">
+            <% section.lessons.rank(:row_order).each do |lesson| %>
+                <div class="lessons small-12 medium-6 columns">
+                  <%= link_to lesson_path(lesson) do %>
+                  <div class="card card-content">
+                    <h4><%= lesson.title %></h4>
+                    <p><%= lesson.subtitle %></p>
+                  </div>
+                  <% end %>
+                </div>
+            <% end %>
+          </div>
+      </div>
+    <% end %>
   </div>
 </div>
