@@ -34,6 +34,6 @@ You can see a live version of the application at
 [demo]: https://dev-stream-courses.herokuapp.com/
 
 ## Screenshots
-![DevStream Homepage](https://raw.githubusercontent.com/jwmunn/flixter/master/app/assets/images/devstream-index.png "DevStream Homepage")
-![DevStream Drag Interface](https://raw.githubusercontent.com/jwmunn/flixter/master/app/assets/images/devstream-drag.png "DevStream Homepage")
-![DevStream Dashboard](https://raw.githubusercontent.com/jwmunn/flixter/master/app/assets/images/devstream-dashboard.png "DevStream Homepage")
+![DevStream Homepage](https://raw.githubusercontent.com/jwmunn/DevStream/master/app/assets/images/devstream-index.png "DevStream Homepage")
+![DevStream Drag Interface](https://raw.githubusercontent.com/jwmunn/DevStream/master/app/assets/images/devstream-drag.png "DevStream Homepage")
+![DevStream Dashboard](https://raw.githubusercontent.com/jwmunn/DevStream/master/app/assets/images/devstream-dashboard.png "DevStream Homepage")
